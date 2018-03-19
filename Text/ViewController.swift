@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var mycount: UILabel!
+    var count = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +22,17 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    @IBAction func buttonpressed(_ sender: Any) {
+        print("#\(count)mycount pressed")
+        count = count + 1
+        mycount.text = String(count)
+    }
+    
+    @IBAction func reset(_ sender: Any) {
+        count = 0
+        mycount.text = String(count)
+    }
+    
 
 }
 
